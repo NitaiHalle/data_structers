@@ -52,18 +52,23 @@ void push_minmax (Stack_min_max* s, int data){
         }
     }
 }
-//fix from here
-int pop(Stack* s){
+int pop_minmax(Stack_min_max* s){
     int value = (int)NULL;
-    if(isEmpty(s)){
+    if(is_Empty_minmax(s)){
         printf("the stack is empty !\n");
 
     }else{
-        Node* tmp = s->head;
-        s->head = tmp->next;
-        value = tmp->data;
-        free(tmp);
-        s->size--;
+        value = pop(s->stack);
+        pop(s->max);
+        pop(s->min);
     }
     return value;
+}
+
+int max(Stack_min_max* s){
+    return top(s->max);
+}
+
+int min(Stack_min_max* s){
+    return top(s->min);
 }

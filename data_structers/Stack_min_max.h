@@ -19,3 +19,10 @@ typedef struct {
     Stack* max;
     
 } Stack_min_max;
+
+Stack_min_max* createStack_min_max(void);
+int is_Empty_minmax(Stack_min_max* s);
+void push_minmax (Stack_min_max* s, int data);
+int pop_minmax(Stack_min_max* s);
+int max(Stack_min_max* s);
+int min(Stack_min_max* s);
