@@ -27,18 +27,14 @@ int is_Empty_minmax(Stack_min_max* s){
     }
 }
 void push_minmax (Stack_min_max* s, int data){
-    Node* curr = createNode(data);
     if (is_Empty_minmax(s)){
-        s->stack->head = curr;
+        push(s->stack, data);
         push(s->max,data);
         push(s->min,data);
     }else{
-        ///from here need fix
-        int min,max;
-        curr->next = s->stack->head;
-        s->stack->head = curr;
-        min = top(s->min);
-        max = top(s->max);
+        push(s->stack, data);
+        int min = top(s->min);
+        int max = top(s->max);
         if (data > max){
             push(s->max, data);
         }else{
@@ -65,10 +61,10 @@ int pop_minmax(Stack_min_max* s){
     return value;
 }
 
-int max(Stack_min_max* s){
+int top_max(Stack_min_max* s){
     return top(s->max);
 }
 
-int min(Stack_min_max* s){
+int top_min(Stack_min_max* s){
     return top(s->min);
 }

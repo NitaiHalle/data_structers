@@ -11,8 +11,7 @@
 
 #include <stdio.h>
 
-#endif /* Stack_h */
-typedef struct Node{
+typedef struct {
     int data;
     struct Node* next;
 }Node;
@@ -21,6 +20,9 @@ typedef struct {
     Node* head;
     int size;
 } Stack;
+
+#endif /* Stack_h */
+
 Node* createNode(int data);
 Stack* createStack(void);
 int isEmpty(Stack* s);

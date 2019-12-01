@@ -56,7 +56,7 @@ int pop(Stack* s){
 int top(Stack* s){
     int value = (int)NULL;
     if(isEmpty(s)){
-        printf("the stack is empty !!\n");
+        //printf("the stack is empty !\n");
     }else{
         value = s->head->data;
     }
